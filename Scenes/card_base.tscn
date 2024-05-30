@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgfmuwh4wv5nc"]
+
+[ext_resource type="Script" path="res://Scripts/CardBase.gd" id="1_dg0jq"]
+[ext_resource type="Texture2D" uid="uid://bf32r164rxasa" path="res://Assets/Back.png" id="2_fq3d0"]
+
+[node name="CardBase" type="MarginContainer"]
+offset_left = 312.0
+offset_top = 347.0
+offset_right = 412.0
+offset_bottom = 467.0
+pivot_offset = Vector2(50, 60)
+script = ExtResource("1_dg0jq")
+
+[node name="Back" type="Sprite2D" parent="."]
+texture = ExtResource("2_fq3d0")
+
+[node name="Front" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 60)
+scale = Vector2(8.20833, 7.375)

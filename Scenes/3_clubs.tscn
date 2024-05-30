@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ef6krlfh10i"]
+
+[ext_resource type="Texture2D" uid="uid://1sbtbt1nqc74" path="res://Assets/3-Clubs.png" id="1_nv4q0"]
+[ext_resource type="Texture2D" uid="uid://bf32r164rxasa" path="res://Assets/Back.png" id="2_sx1uy"]
+
+[node name="3-Clubs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -680.0
+offset_bottom = -1160.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 60)
+
+[node name="Back" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 120.0
+texture = ExtResource("2_sx1uy")
+
+[node name="Front" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 120.0
+texture = ExtResource("1_nv4q0")

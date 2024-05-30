@@ -1,13 +1,219 @@
-[gd_scene load_steps=3 format=3 uid="uid://bo6syfalska5u"]
+[gd_scene load_steps=17 format=3 uid="uid://bo6syfalska5u"]
 
-[sub_resource type="Gradient" id="Gradient_3pyaq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gg073"]
-gradient = SubResource("Gradient_3pyaq")
+[ext_resource type="Texture2D" uid="uid://v4e8wo0verm0" path="res://Assets/green.jpeg" id="1_f1jl4"]
+[ext_resource type="PackedScene" uid="uid://c6vqtkqb3l2v4" path="res://Scenes/card_back.tscn" id="2_mjesr"]
+[ext_resource type="PackedScene" uid="uid://de6ga65gqb1fb" path="res://Scenes/a_clubs.tscn" id="2_sp3ph"]
+[ext_resource type="PackedScene" uid="uid://cv7p2w6xtryvd" path="res://Scenes/a_diamond.tscn" id="3_gba64"]
+[ext_resource type="PackedScene" uid="uid://wjigtx3325g5" path="res://Scenes/a_spades.tscn" id="4_76vrg"]
+[ext_resource type="PackedScene" uid="uid://cxxe3mgugg4v0" path="res://Scenes/a_heart.tscn" id="5_uot0q"]
+[ext_resource type="PackedScene" uid="uid://cawcijvbcapg" path="res://Scenes/2_spades.tscn" id="6_56r88"]
+[ext_resource type="PackedScene" uid="uid://dytvy47shkljw" path="res://Scenes/2_clubs.tscn" id="7_fwqah"]
+[ext_resource type="PackedScene" uid="uid://bvgwlc1gx3gp5" path="res://Scenes/2_diamond.tscn" id="8_xepy5"]
+[ext_resource type="PackedScene" uid="uid://bvl33r31qh50d" path="res://Scenes/2_heart.tscn" id="9_8sjjv"]
+[ext_resource type="PackedScene" uid="uid://d0l5f46bkhtj5" path="res://Scenes/3_diamond.tscn" id="11_tvkv7"]
+[ext_resource type="PackedScene" uid="uid://bu23x7hwajpg8" path="res://Scenes/3_spades.tscn" id="12_weq2i"]
+[ext_resource type="PackedScene" uid="uid://4r3tgblxa1o1" path="res://Scenes/3_heart.tscn" id="13_e78nv"]
+[ext_resource type="Texture2D" uid="uid://bf32r164rxasa" path="res://Assets/Back.png" id="14_82s8f"]
+[ext_resource type="Texture2D" uid="uid://cjghhamd4j46i" path="res://Assets/A-Spades.png" id="15_n6crc"]
+[ext_resource type="Script" path="res://Scripts/TextureButton.gd" id="16_ekq8t"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(390.539, 640.298)
 scale = Vector2(-12.1702, 19.9938)
-texture = SubResource("GradientTexture2D_gg073")
+texture = ExtResource("1_f1jl4")
+
+[node name="AI2" parent="." instance=ExtResource("2_mjesr")]
+offset_left = 738.0
+offset_top = 318.0
+offset_right = 738.0
+offset_bottom = 318.0
+rotation = 1.5708
+pivot_offset = Vector2(50, 60)
+
+[node name="AI3" parent="." instance=ExtResource("2_mjesr")]
+offset_left = -64.0
+offset_top = 325.0
+offset_right = -64.0
+offset_bottom = 325.0
+rotation = 1.5708
+pivot_offset = Vector2(50, 60)
+
+[node name="AI1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardBack" parent="AI1" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 121.0
+offset_top = -79.0
+offset_right = 121.0
+offset_bottom = -79.0
+
+[node name="CardBack2" parent="AI1" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 251.0
+offset_top = -79.0
+offset_right = 251.0
+offset_bottom = -79.0
+
+[node name="CardBack3" parent="AI1" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 371.0
+offset_top = -76.0
+offset_right = 371.0
+offset_bottom = -76.0
+
+[node name="CardBack4" parent="AI1" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 491.0
+offset_top = -79.0
+offset_right = 491.0
+offset_bottom = -79.0
+
+[node name="PlayerHand" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="A-Clubs" parent="PlayerHand" instance=ExtResource("2_sp3ph")]
+layout_mode = 1
+offset_left = 185.0
+offset_top = 1182.0
+offset_right = 185.0
+offset_bottom = 1182.0
+
+[node name="A-Diamond" parent="PlayerHand" instance=ExtResource("3_gba64")]
+layout_mode = 1
+offset_left = 305.0
+offset_top = 1175.0
+offset_right = 305.0
+offset_bottom = 1175.0
+
+[node name="A-Heart" parent="PlayerHand" instance=ExtResource("5_uot0q")]
+layout_mode = 1
+offset_left = 425.0
+offset_top = 1175.0
+offset_right = 425.0
+offset_bottom = 1175.0
+
+[node name="A-Spades" parent="PlayerHand" instance=ExtResource("4_76vrg")]
+layout_mode = 1
+offset_left = 545.0
+offset_top = 1178.0
+offset_right = 545.0
+offset_bottom = 1178.0
+
+[node name="Points" parent="." instance=ExtResource("2_mjesr")]
+offset_left = 613.0
+offset_top = 965.0
+offset_right = 613.0
+offset_bottom = 965.0
+
+[node name="Table" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="2-Clubs" parent="Table" instance=ExtResource("7_fwqah")]
+layout_mode = 1
+offset_left = 154.0
+offset_top = 409.0
+offset_right = 154.0
+offset_bottom = 409.0
+
+[node name="3-Diamond" parent="Table" instance=ExtResource("11_tvkv7")]
+layout_mode = 1
+offset_left = 290.0
+offset_top = 410.0
+offset_right = 290.0
+offset_bottom = 410.0
+
+[node name="2-Diamond" parent="Table" instance=ExtResource("8_xepy5")]
+layout_mode = 1
+offset_left = 424.0
+offset_top = 416.0
+offset_right = 424.0
+offset_bottom = 416.0
+
+[node name="3-Spades" parent="Table" instance=ExtResource("12_weq2i")]
+layout_mode = 1
+offset_left = 553.0
+offset_top = 419.0
+offset_right = 553.0
+offset_bottom = 419.0
+
+[node name="2-Heart" parent="Table" instance=ExtResource("9_8sjjv")]
+layout_mode = 1
+offset_left = 156.0
+offset_top = 567.0
+offset_right = 156.0
+offset_bottom = 567.0
+
+[node name="A-Diamond" parent="Table" instance=ExtResource("3_gba64")]
+layout_mode = 1
+offset_left = 297.0
+offset_top = 567.0
+offset_right = 297.0
+offset_bottom = 567.0
+
+[node name="2-Spades" parent="Table" instance=ExtResource("6_56r88")]
+layout_mode = 1
+offset_left = 427.0
+offset_top = 564.0
+offset_right = 427.0
+offset_bottom = 564.0
+
+[node name="A-Clubs" parent="Table" instance=ExtResource("2_sp3ph")]
+layout_mode = 1
+offset_left = 550.0
+offset_top = 564.0
+offset_right = 550.0
+offset_bottom = 564.0
+
+[node name="3-Heart" parent="Table" instance=ExtResource("13_e78nv")]
+layout_mode = 1
+offset_left = 156.0
+offset_top = 711.0
+offset_right = 156.0
+offset_bottom = 711.0
+
+[node name="3-Spades2" parent="Table" instance=ExtResource("12_weq2i")]
+layout_mode = 1
+offset_left = 297.0
+offset_top = 707.0
+offset_right = 297.0
+offset_bottom = 707.0
+
+[node name="CardBack" parent="Table" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 437.0
+offset_top = 704.0
+offset_right = 437.0
+offset_bottom = 704.0
+
+[node name="CardBack2" parent="Table" instance=ExtResource("2_mjesr")]
+layout_mode = 1
+offset_left = 571.0
+offset_top = 704.0
+offset_right = 571.0
+offset_bottom = 704.0
+
+[node name="Play" parent="." instance=ExtResource("2_mjesr")]
+offset_left = 115.0
+offset_top = 961.0
+offset_right = 115.0
+offset_bottom = 961.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 100.0
+offset_bottom = 120.0
+pivot_offset = Vector2(50, 60)
+texture_normal = ExtResource("14_82s8f")
+texture_pressed = ExtResource("15_n6crc")
+script = ExtResource("16_ekq8t")
