@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo6syfalska5u"]
+
+[sub_resource type="Gradient" id="Gradient_3pyaq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gg073"]
+gradient = SubResource("Gradient_3pyaq")
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(390.539, 640.298)
+scale = Vector2(-12.1702, 19.9938)
+texture = SubResource("GradientTexture2D_gg073")
